@@ -1,3 +1,6 @@
+Author: Shane Wolfram
+Email: shanewolfram@hotmail.com
+
 This repository contains a set of tools for working with LC Subject Headings in Java.
 
 The heading structure has been translated from the LC Linked Data Library for Subject Headings,
