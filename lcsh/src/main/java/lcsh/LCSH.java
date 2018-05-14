@@ -17,12 +17,15 @@ public class LCSH implements Serializable{
 	private ArrayList<LCSH> relatedHeadings = new ArrayList<LCSH>();; // related at the same level of generality. Much less numerous than
 												// narrower/broader headings.
 
-	private ArrayList<LCSH> subdivisions = new ArrayList<LCSH>();; // subdivisions are not taken directly from lc linked data.
-											// (ex. cities and towns--united states is a subdivision of
-											// cities and towns. This may be useful for incorporating more
-											// terms in a hierarchy, but I have noticed that if subdivisions
-											// are treated like "narrower headings" you can get infinite loops
-											// when building a hierarchy.
+	private ArrayList<LCSH> subdivisions = new ArrayList<LCSH>();; // subdivisions (ex. cities and towns--united states is a subdivided term under cities and towns) 
+									//are not taken directly from lc linked data, but my knowledge of 
+									//cataloging suggested that it might be useful information to have. 
+								// Traversing a heading from its subdivisions is similar to using the narrower
+								// heading field - I was surprised that subdivisions were not encoded
+								// as narrower headings more generally.
+								// Using subdivisions may be useful for incorporating more terms in a hierarchy, 
+								// but I have noticed that if subdivisions are treated like "narrower headings" 
+								// you can get infinite loops when building a hierarchy.
 
 	private ArrayList<String> variantTerms = new ArrayList<String>();; // synonyms for the heading name. Important for keyword search.
 	private int count; // number of catalog items that contain this heading
